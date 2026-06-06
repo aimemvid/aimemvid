@@ -38,23 +38,3 @@ export async function onRequest({ request }) {
   });
 }
 
-
-
-const page = PAGES[pathname];
-
-  if (page) {
-    return new Response(
-      normalTemplate(page),
-      {
-        headers: {
-          "content-type": "text/html; charset=UTF-8"
-        }
-      }
-    );
-  }
-
-  return new Response("404 - Not Found", {
-    status: 404
-  });
-}
-
