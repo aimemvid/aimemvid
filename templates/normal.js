@@ -2,40 +2,34 @@
 
 import { CONFIG } from "../config/site.js";
 
+import { head } from "./parts/head.js";
+import { header } from "./parts/header.js";
+import { secheader } from "./parts/secheader.js";
+import { secfooter } from "./parts/secfooter.js";
+import { footer } from "./parts/footer.js";
+
 export function normalTemplate() {
-  return `<!DOCTYPE html>
+  return `
+<!DOCTYPE html>
 <html lang="id">
+
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>${CONFIG.title}</title>
-
-<meta name="description" content="${CONFIG.desc}">
-
-<link rel="canonical" href="${CONFIG.canonical}">
-<link rel="amphtml" href="${CONFIG.canonical}amp">
-
-<link rel="icon" href="${CONFIG.favicon}">
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="${CONFIG.title}">
-<meta property="og:description" content="${CONFIG.desc}">
-<meta property="og:image" content="${CONFIG.image}">
-<meta property="og:url" content="${CONFIG.canonical}">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="${CONFIG.title}">
-<meta name="twitter:description" content="${CONFIG.desc}">
-<meta name="twitter:image" content="${CONFIG.image}">
-
+${head(CONFIG)}
 </head>
 
 <body>
 
+${header(CONFIG)}
+
+${secheader(CONFIG)}
+
 ${CONFIG.content}
 
+${secfooter(CONFIG)}
+
+${footer(CONFIG)}
+
 </body>
-</html>`;
+</html>
+`;
 }
