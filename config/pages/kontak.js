@@ -3,6 +3,6 @@ export const kontak = {
   desc: "Hubungi kami",
   content: `
     <h1>Kontak</h1>
-    <p>Isi halaman kontak.</p>
+    <p>Isi halaman kontaks.</p>
   `
 };
