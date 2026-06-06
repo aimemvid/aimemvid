@@ -1,3 +1,5 @@
+// functions/pages.js
+
 import { PAGES } from "../config/pages.js";
 import { pagesTemplate } from "../templates/pages.js";
 
@@ -7,7 +9,10 @@ export function pagesPage(pathname) {
 
   if (!page) {
     return new Response("404 - Not Found", {
-      status: 404
+      status: 404,
+      headers: {
+        "content-type": "text/plain; charset=UTF-8"
+      }
     });
   }
 
@@ -16,8 +21,7 @@ export function pagesPage(pathname) {
     {
       status: 200,
       headers: {
-        "content-type": "text/html; charset=UTF-8",
-        "cache-control": "public, max-age=300"
+        "content-type": "text/html; charset=UTF-8"
       }
     }
   );
