@@ -10,6 +10,8 @@ export const PAGES = {
   "/kontak": {
     title: "Kontak",
     desc: "Hubungi kami",
-    content: "<h1>Kontak</h1>"
+    canonical: "/kontak",
+    image: "",
+    content: "<h1>Hubungi kami</h1>"
   }
 };
